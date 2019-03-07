@@ -19,10 +19,12 @@ router.get('/test' , (req, res) => res.json({msg: "profile works"}));
 // @desc         get current users profile
 //@access        Private
 
-router.get('/', passport.authenticate('jwt', {session: false}), (res, req) => {
+router.get('/',
+ passport.authenticate('jwt', {session: false}), 
+    (req, res) => {
             const errors = {}
             console.log(user)
-    Profile.findOne({ user: req.user.id })
+     Profile.findOne({ user: req.user.id })
         .then(profile => {
             if (!profile) {
                 errors.noprofile = 'there is no profile'
