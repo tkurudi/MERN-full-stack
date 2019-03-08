@@ -230,7 +230,7 @@ router.post('/education', passport.authenticate('jwt', { session: false }), (req
         return res.status(400).json(errors);
     }
     Profile.findOne({ user: req.user.id})
-.then(profile => {
+    .then(profile => {
     const newEduc = {
         school: req.body.school,
         degree: req.body.degree,
@@ -256,7 +256,7 @@ router.post('/education', passport.authenticate('jwt', { session: false }), (req
 //@access        private
 
 
-router.post('/experience/:exp_id',
+router.delete('/experience/:exp_id',
  passport.authenticate('jwt', { session: false }), (req, res) => {
    
     Profile.findOne({ user: req.user.id})
@@ -274,6 +274,44 @@ router.post('/experience/:exp_id',
    profile.save().then(profile => res.json(profile))
 })
 .catch(err => res.status(404).json({msg: 'error'}))
+
+
+});
+//@route         DELETE api/profile/experience/:exp_id 
+// @desc         delete exp from profile
+//@access        private
+
+
+router.delete('/education/:educ_id',
+ passport.authenticate('jwt', { session: false }), (req, res) => {
+   
+    Profile.findOne({ user: req.user.id})
+.then(profile => {
+   // get remove index
+   const removeIndex = profile.education
+   .map(item => item.id)
+   .indexOF(req.params.educ_id);
+
+   // spice out of PropTypes.array,
+   profile.education.splice(removeIndex, 1);
+
+   //save
+
+   profile.save().then(profile => res.json(profile))
+})
+.catch(err => res.status(404).json({msg: 'error'}))
+
+
+});
+
+router.delete('/',
+ passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+   Profile.findOneAndDelete({ user: req.user.id})
+   .then(() => {
+       User.findOneAndDelete({_id: req.user.id})
+       .then(() => res.json({ success: true}))
+   } )
 
 
 });
