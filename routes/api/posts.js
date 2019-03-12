@@ -23,9 +23,8 @@ router.get('/' , (req, res) => res.json({msg: "posts works"}));
 // @desc         create post route
 //@access        Private
 
-router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
-    console.log('this is' , req.body)
-
+router.post('/', passport.authenticate('jwt', {session: false}),
+ (req, res) => {
     const {errors, isValid} = validatePostInput(req.body);
 
 
@@ -39,7 +38,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
         text: req.body.text,
         name: req.body.name,
         avatar: req.body.name,
-        user: req.body.id
+        user: req.user.id
     });
 
     newPost.save()
