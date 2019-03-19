@@ -1,6 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {loginUser} from '../../actions/authActions';
 
-export default class Login extends Component {
+ class Login extends Component {
     state = {
         email: '',
         password: '',
@@ -48,3 +51,5 @@ onSubmit = (e) => {
     )
   }
 }
+
+export default connect()(Login)
