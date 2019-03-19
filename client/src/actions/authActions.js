@@ -46,4 +46,15 @@ import jwt_decode from 'jwt-decode';
          type: SET_CURRENT_USER,
          payload: decoded
      }
+ };
+
+ //log out
+
+ export const logoutUser = () => dispatch => {
+     //remove token form local store
+    localStorage.removeItem('jtwToken');
+    //remove auth header for future requests
+    setAuthToken(false);
+    //set the current user to an empty object with will also set isauth to false
+    dispatch(setCurrentUser({}));
  }
