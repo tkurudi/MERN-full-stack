@@ -14,7 +14,7 @@ import jwt_decode from 'jwt-decode';
                 payload: err.response.data
             })
             
-            );
+        );
  };
 
  //login
