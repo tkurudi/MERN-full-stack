@@ -52,7 +52,7 @@ import jwt_decode from 'jwt-decode';
 
  export const logoutUser = () => dispatch => {
      //remove token form local store
-    localStorage.removeItem('jtwToken');
+    localStorage.removeItem('jwtToken');
     //remove auth header for future requests
     setAuthToken(false);
     //set the current user to an empty object with will also set isauth to false
