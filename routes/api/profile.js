@@ -241,7 +241,7 @@ router.post('/education', passport.authenticate('jwt', { session: false }), (req
         description: req.body.description
     }
 
-    // add to exp PropTypes.array,
+    // add to exp array,
 
     profile.education.unshift(newEduc);
 

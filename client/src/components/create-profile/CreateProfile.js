@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import TextFieldGroup from '../common/textFieldGroup';
+import TextFieldGroup from '../common/TextFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import TextAreaGroup from '../common/TextAreaGroup';
+import {createProfile} from '../../actions/profileActions';
+import {withRouter} from 'react-router-dom';
 
 
 class CreateProfile extends Component {
@@ -24,14 +26,39 @@ class CreateProfile extends Component {
       errors: {}
 
   }
+  componentWillReceiveProps(nextProps) {
+      if(nextProps.errors) {
+          this.setState({errors: nextProps.errors})
+      }
+  }
 
   onChange = (e) => {
-    e.preventDefault();
-    console.log('submit');
+    
+
+    this.setState({ [e.target.name]: e.target.value})
+
+   
   }
 
   onSubmit = (e) => {
-this.setState({[e.target.name]: e.target.name})
+    e.preventDefault();
+
+    const profileData = {
+        handle: this.state.handle,
+        company: this.state.company,
+        website: this.state.website,
+        location: this.state.location,
+        status: this.state.status,
+        skills: this.state.skills,
+        githubusername: this.state.githubusername,
+        bio: this.state.bio,
+        twitter: this.state.twitter,
+        facebook: this.state.facebook,
+        linkedin: this.state.linkedin,
+        youtube: this.state.youtube,
+        instagram: this.state.instagram,
+    }
+    this.props.createProfile(profileData, this.props.history)
 }
     render() {
         const {errors, displaySocialInputs } = this.state;
@@ -72,6 +99,14 @@ this.setState({[e.target.name]: e.target.name})
                     value={this.state.youtube}
                     onChange={this.onchange}
                     error={errors.youtube}
+                    />
+                     <InputGroup
+                    placeholder="linkedin Profile URL"
+                    name="linkedin"
+                    icon="fab fa-linkedin"
+                    value={this.state.linkedin}
+                    onChange={this.onchange}
+                    error={errors.linkedin}
                     />
                 </div>
             )
@@ -190,4 +225,4 @@ auth: state.auth,
 errors: state.errors
 })
 
-export default connect(mapStateToProps)(CreateProfile)
+export default connect(mapStateToProps, {createProfile})(withRouter(CreateProfile))
