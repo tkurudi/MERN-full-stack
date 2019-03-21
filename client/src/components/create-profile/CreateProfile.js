@@ -138,7 +138,7 @@ class CreateProfile extends Component {
                             <form onSubmit={this.onSubmit}>
                                 <TextFieldGroup
                                 placeholder="* Profile Handle"
-                                name="Handle"
+                                name="handle"
                                 value={this.state.handle}
                                 onChange={this.onChange}
                                 error={errors.handle}
@@ -146,7 +146,7 @@ class CreateProfile extends Component {
                                 />
                                   <SelectListGroup
                                 placeholder="* Status"
-                                name="Status"
+                                name="status"
                                 value={this.state.status}
                                 onChange={this.onChange}
                                 options={options}
@@ -163,7 +163,7 @@ class CreateProfile extends Component {
                                 />
                                 <TextFieldGroup
                                 placeholder="Location"
-                                name="Location"
+                                name="location"
                                 value={this.state.location}
                                 onChange={this.onChange}
                                 error={errors.location}
