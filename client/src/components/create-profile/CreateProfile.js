@@ -155,26 +155,26 @@ class CreateProfile extends Component {
                                 />
                                 <TextFieldGroup
                                 placeholder="Company"
-                                name="Company"
-                                value={this.state.Company}
+                                name="company"
+                                value={this.state.company}
                                 onChange={this.onChange}
-                                error={errors.Company}
+                                error={errors.company}
                                 info="Could be your own Company or one you work for"
                                 />
                                 <TextFieldGroup
                                 placeholder="Location"
                                 name="Location"
-                                value={this.state.Location}
+                                value={this.state.location}
                                 onChange={this.onChange}
-                                error={errors.Location}
+                                error={errors.location}
                                 info="Where are you from"
                                 />
                                 <TextFieldGroup
                                 placeholder="Skills"
-                                name="Skills"
-                                value={this.state.Skills}
+                                name="skills"
+                                value={this.state.skills}
                                 onChange={this.onChange}
-                                error={errors.Skills}
+                                error={errors.skills}
                                 info="Please use a comma separated values (eg. HTML,CSS,JAVA)"
                                 />
                                 <TextFieldGroup
