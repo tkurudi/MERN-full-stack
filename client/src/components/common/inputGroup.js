@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames';
 import PropTypes from 'prop-types'
 
-const inputGroup = ({
+const InputGroup = ({
     name,
     placeholder,
     value,
@@ -35,4 +35,4 @@ const inputGroup = ({
   }
 
 
-export default inputGroup
+export default InputGroup

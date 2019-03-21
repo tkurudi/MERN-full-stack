@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames';
 import PropTypes from 'prop-types'
 
-const textAreaGroup = ({
+const TextAreaGroup = ({
     name,
     placeholder,
     value,
@@ -29,4 +29,4 @@ const textAreaGroup = ({
   }
 
 
-export default textAreaGroup
+export default TextAreaGroup

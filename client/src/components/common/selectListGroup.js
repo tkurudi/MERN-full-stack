@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames';
 import PropTypes from 'prop-types'
 
-const selectListGroup = ({
+const SelectListGroup = ({
     name,
     value,
     error,
@@ -25,7 +25,7 @@ const selectListGroup = ({
                  value={value}
                  onChange={onChange}>
                  {selectOptions}
-                 </select>/>
+                 </select>
                  {info && <small className='form-text text-muted'>{info}</small>}
                  {error &&
                    (<div className="invalid-feedback">{error}</div>)}
@@ -34,4 +34,4 @@ const selectListGroup = ({
   }
 
 
-export default selectListGroup
+export default SelectListGroup
