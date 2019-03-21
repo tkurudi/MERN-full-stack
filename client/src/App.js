@@ -12,7 +12,7 @@ import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import CreateProfile from './components/create-profile/CreateProfile';
 
 import './App.css';
