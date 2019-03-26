@@ -21,7 +21,7 @@ import Spinner from '../common/Spinner';
     } else {
       //check to see if logged in user has profile data
       if(Object.keys(profile).length > 0) {
-        dashboardContent = <h4> todo display profile</h4>
+        dashboardContent = <p className="lead text-muted">welcome {user.name}</p>
       } else {
           //user if logged in but has no profile
           dashboardContent = (
