@@ -157,7 +157,7 @@ router.post('/',
                    }, {
                        new: true
                    })
-                   .then(profile => releaseEvents.json(profile));
+                   .then(profile => res.json(profile));
                //update
                profile
            } else {
