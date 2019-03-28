@@ -3,6 +3,7 @@ import {Link, withRouter} from 'react-router-dom';
 import  TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaGroup from '../common/TextAreaGroup';
 import {connect} from 'react-redux';
+import {addExp} from '../../actions/profileActions'
 
  class AddExp extends Component {
      state = {
@@ -132,4 +133,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps)(withRouter(AddExp)); 
+export default connect(mapStateToProps, {addExp})(withRouter(AddExp)); 
