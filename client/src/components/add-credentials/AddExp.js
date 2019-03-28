@@ -42,7 +42,7 @@ import {addExp} from '../../actions/profileActions'
 
         const expData = {
             company: this.state.company,
-            title: this.state.company,
+            title: this.state.title,
             location: this.state.location,
             from: this.state.from,
             to: this.state.to,
