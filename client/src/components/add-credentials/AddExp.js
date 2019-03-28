@@ -18,9 +18,17 @@ import {addExp} from '../../actions/profileActions'
        disabled: false  
      }
 
-     onchange = (e) => {
-        this.setState({ [e.targwt.name]: e.target.value})
+     componentWillReceiveProps(nextProps) {
+         if(nextProps.errors) {
+             this.setState({ errors: nextProps.errors})
+         }
      }
+
+     onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value})
+     }
+
+    
 
      onCheck = () => {
         this.setState({
@@ -32,7 +40,16 @@ import {addExp} from '../../actions/profileActions'
      onSubmit = (e) => {
         e.preventDefault()
 
-        console.log(e)
+        const expData = {
+            company: this.state.company,
+            title: this.state.company,
+            location: this.state.location,
+            from: this.state.from,
+            to: this.state.to,
+            current: this.state.current,
+            description: this.state.description
+        };
+           this.props.addExp(expData, this.props.history)
      }
   render() {
       const { errors } = this.state;
@@ -72,27 +89,23 @@ import {addExp} from '../../actions/profileActions'
                                 error={errors.location}
                             
                             />
-                             <h6>Form date</h6>
-                             <TextFieldGroup
-                                placeholder="From"
-                                name="date"
-                                type="date"
-                                value={this.state.from}
-                                onChange={this.onChange}
-                                error={errors.from}
-                            
-                            />
-                            <h5>To date</h5>
-                            <TextFieldGroup
-                                placeholder="To"
-                                name="date"
-                                type="date"
-                                value={this.state.to}
-                                onChange={this.onChange}
-                                error={errors.to}
-                                disabled={this.state.disabled ? 'disabled' : ''}
-                            
-                            />
+                                 <h6>From Date</h6>
+                                    <TextFieldGroup
+                                    name="from"
+                                    type="date"
+                                    value={this.state.from}
+                                    onChange={this.onChange}
+                                    error={errors.from}
+                                    />
+                                    <h6>To Date</h6>
+                                    <TextFieldGroup
+                                    name="to"
+                                    type="date"
+                                    value={this.state.to}
+                                    onChange={this.onChange}
+                                    error={errors.to}
+                                    disabled={this.state.disabled ? 'disabled' : ''}
+                                    />
 
                             <div className="form-check mb-4">
                                 <input

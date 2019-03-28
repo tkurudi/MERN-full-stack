@@ -207,7 +207,7 @@ router.post('/experience', passport.authenticate('jwt', { session: false }), (re
 
     // add to exp array,
 
-    profile.experience.unShift(newExp);
+    profile.experience.unshift(newExp);
 
     profile.save()
     .then(profile => res.json(profile))
