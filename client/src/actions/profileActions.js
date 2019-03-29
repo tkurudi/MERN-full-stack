@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import {GET_PROFILE,
      PROFILE_LOADING, CLEAR_CURRENT_PROFILE,
-      GET_ERRORS, SET_CURRENT_USER} from './types';
+      GET_ERRORS, SET_CURRENT_USER, GET_PROFILES} from './types';
 
 //get current profile
 
@@ -114,6 +114,26 @@ axios.post('/api/profile', profileData)
                 payload: err.response.data
             }))
     }
+
+
+    // get all profiles
+
+    export const getProfiles = () => dispatch => {
+        dispatch(setProfileLoading()) 
+        axios
+        .get('/api/profile/all')
+        .then(res => 
+            dispatch({
+                type: GET_PROFILES,
+                payload: res.data
+            }))
+        .catch(err =>
+            dispatch({
+                type: GET_PROFILES,
+                payload: null
+            }))
+    }
+
     //delete account
     export const deleteAccount = () => dispatch => {
         if(window.confirm('Are you sure? This can NOT be undone!')){
