@@ -56,7 +56,7 @@ class EditProfile extends Component {
         profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : '';
 
 
-        // set component feilds state
+        // set component fields state
         this.setState({
             handle: profile.handle,
             company:  profile.company,
