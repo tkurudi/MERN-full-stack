@@ -4,7 +4,7 @@ import React, { Component } from 'react'
   render() {
     return (
       <div>
-        <h1> TODO profile about </h1>
+        <h1> TODO profile git </h1>
       </div>
     )
   }

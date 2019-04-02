@@ -59,18 +59,18 @@ class EditProfile extends Component {
         // set component fields state
         this.setState({
             handle: profile.handle,
-            company:  profile.company,
-            website:  profile.website,
-            location:  profile.location,
-            status:  profile.status,
-            skills:  skillsCSV,
-            githubusername:  profile.githubusername,
-            bio:  profile.bio,
-            twitter:  profile.twitter,
-            facebook:  profile.facebook,
-            linkedin:  profile.linkedin,
-            youtube:  profile.youtube,
-            instagram:  profile.instagram
+            company: profile.company,
+            website: profile.website,
+            location: profile.location,
+            status: profile.status,
+            skills: skillsCSV,
+            githubusername: profile.githubusername,
+            bio: profile.bio,
+            twitter: profile.twitter,
+            facebook: profile.facebook,
+            linkedin: profile.linkedin,
+            youtube: profile.youtube,
+            instagram: profile.instagram
            
         })
        }
@@ -117,7 +117,7 @@ class EditProfile extends Component {
                     name="twitter"
                     icon="fab fa-twitter"
                     value={this.state.twitter}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.twitter}
                     />
                     <InputGroup
@@ -125,7 +125,7 @@ class EditProfile extends Component {
                     name="facebook"
                     icon="fab fa-facebook"
                     value={this.state.facebook}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.facebook}
                     />
                     <InputGroup
@@ -133,7 +133,7 @@ class EditProfile extends Component {
                     name="instagram"
                     icon="fab fa-instagram"
                     value={this.state.instagram}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.instagram}
                     />
                     <InputGroup
@@ -141,7 +141,7 @@ class EditProfile extends Component {
                     name="youtube"
                     icon="fab fa-youtube"
                     value={this.state.youtube}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.youtube}
                     />
                      <InputGroup
@@ -149,7 +149,7 @@ class EditProfile extends Component {
                     name="linkedin"
                     icon="fab fa-linkedin"
                     value={this.state.linkedin}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.linkedin}
                     />
                 </div>
