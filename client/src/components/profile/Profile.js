@@ -38,8 +38,10 @@ import {getProfileByHandle} from '../../actions/profileActions';
                         <ProfileHeader profile ={profile}/>
                         <ProfileAbout profile = {profile}/>
                         <ProfileCreds education={profile.education} 
-                                                experience={profile.experience}/>
-                        <ProfileGit />
+                                                experience={profile.experience}
+                                    />
+                                    {profile.githubusername ? (<ProfileGit username={profile.githubusername}/>) : null}
+                        
               </div>
           )
       }
