@@ -12,10 +12,10 @@ class PostForm extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-                if(newProps.errors) {
-                    this.setState({errors: newProps.errors})
-                }
+    if(newProps.errors) {
+        this.setState({errors: newProps.errors})
     }
+}
 
     onSubmit = (e) => {
         e.preventDefault();
