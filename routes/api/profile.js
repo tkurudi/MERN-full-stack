@@ -127,7 +127,7 @@ router.post('/',
    if(req.body.handle) profileFields.handle = req.body.handle;
    if(req.body.company) profileFields.company = req.body.company;
    if(req.body.website) profileFields.website = req.body.website;
-   if(req.body.location) profileFields.location = req.body.lobio;
+   if(req.body.location) profileFields.location = req.body.location;
    if(req.body.bio) profileFields.bio = req.body.bio;
    if(req.body.status) profileFields.status = req.body.status;
    if(req.body.githubusername) profileFields.githubusername = req.body.githubusername;
@@ -264,7 +264,7 @@ router.delete('/experience/:exp_id',
    // get remove index
    const removeIndex = profile.experience
    .map(item => item.id)
-   .indexOF(req.params.exp_id);
+   .indexOf(req.params.exp_id);
 
    // spice out of PropTypes.array,
    profile.experience.splice(removeIndex, 1);
@@ -290,7 +290,7 @@ router.delete('/education/:educ_id',
    // get remove index
    const removeIndex = profile.education
    .map(item => item.id)
-   .indexOF(req.params.educ_id);
+   .indexOf(req.params.educ_id);
 
    // spice out of PropTypes.array,
    profile.education.splice(removeIndex, 1);
