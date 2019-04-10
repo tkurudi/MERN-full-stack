@@ -7,7 +7,6 @@ import TextAreaGroup from '../common/TextAreaGroup';
 import {createProfile, getCurrentProfile} from '../../actions/profileActions';
 import {withRouter, Link} from 'react-router-dom';
 import isEmpty from '../../validation/isEmpty';
-import CreateProfile from '../create-profile/CreateProfile';
 
 
 class EditProfile extends Component {

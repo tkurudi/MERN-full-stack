@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import isEmpty from '../../validation/isEmpty';
+import {Link } from 'react-router-dom';
  class ProfileHeader extends Component {
   render() {
     const { profile } =  this.props;
@@ -19,21 +20,21 @@ import isEmpty from '../../validation/isEmpty';
             <p>{isEmpty(profile.location) ? null
             : (<span> {profile.location}</span>)}</p>
             <p>
-              <a className="text-white p-2" href="#">
+              <Link className="text-white p-2" to="#">
                 <i className="fas fa-globe fa-2x"></i>
-              </a>
-              <a className="text-white p-2" href="#">
+              </Link>
+              <Link className="text-white p-2" to="#">
                 <i className="fab fa-twitter fa-2x"></i>
-              </a>
-              <a className="text-white p-2" href="#">
+              </Link>
+              <Link className="text-white p-2" to="#">
                 <i className="fab fa-facebook fa-2x"></i>
-              </a>
-              <a className="text-white p-2" href="#">
+              </Link>
+              <Link className="text-white p-2" to="#">
                 <i className="fab fa-linkedin fa-2x"></i>
-              </a>
-              <a className="text-white p-2" href="#">
+              </Link>
+              <Link className="text-white p-2" to="#">
                 <i className="fab fa-instagram fa-2x"></i>
-              </a>
+              </Link>
             </p>
           </div>
         </div>
