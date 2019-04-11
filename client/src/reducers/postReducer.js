@@ -6,7 +6,7 @@ const initialState = {
     loading: false
 };
 
-export default function(state= initialState, action) {
+export default function(state = initialState, action) {
     switch(action.type){
     case POST_LOADING:
      return {
@@ -16,7 +16,7 @@ export default function(state= initialState, action) {
     case GET_POSTS:
      return {
          ...state,
-         post: action.payload,
+         posts: action.payload,
          loading: false
      }
      case GET_POST:
